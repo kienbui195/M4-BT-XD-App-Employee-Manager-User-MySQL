@@ -25,6 +25,7 @@
         <th scope="col">Bộ Phận</th>
         <th scope="col">Lương Tháng</th>
         <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody class="table-light">
@@ -36,6 +37,7 @@
             <th scope="col"><%= item.department %></th>
             <th scope="col"><%= item.salary %></th>
             <th scope="col"><a class="btn btn-danger" href="/delete?name=<%= item.name %>">Xóa</a></th>
+            <th scope="col"><a class="btn btn-primary" href="/update?id=<%= item.id %>">Sửa</a></th>
         </tr>
     <% }) %>
     </tbody>

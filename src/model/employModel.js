@@ -12,6 +12,11 @@ class EmployModel extends Model {
         return await this.querySQL(sql);
     }
 
+    async findById(id) {
+        let sql = `SELECT * FROM employees WHERE id = '${id}'`;
+        return await this.querySQL(sql);
+    }
+
     async addEmployee(name, country, department, salary) {
         let sql = `INSERT INTO employees (name, country, department, salary) VALUES ('${name}', '${country}', '${department}', ${salary})`;
         return await this.querySQL(sql);
@@ -19,6 +24,11 @@ class EmployModel extends Model {
 
     async deleteEmployee(name) {
         let sql = `DELETE FROM employees WHERE name = '${name}'`
+        await this.querySQL(sql);
+    }
+
+    async updateInfoEmployee(name, country, department, salary, id) {
+        let sql = `UPDATE employees SET name = '${name}', country = '${country}', department = '${department}', salary = ${salary} WHERE id = ${id}`;
         await this.querySQL(sql);
     }
 }
